@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Sesi Kholo, with love</title>
+<style>
+:root{--bg1:#211426;--bg2:#321b31;--gold:#efc783;--cream:#fff7ec;--soft:#e8cfd0;--card:#ffffff0d;--line:#efc78366;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg1:#fff3e6;--bg2:#fbe0e4;--gold:#9a5b13;--cream:#3a1f2b;--soft:#6b4350;--card:#ffffffaa;--line:#9a5b1366;color-scheme:light}}
+:root[data-theme="light"]{--bg1:#fff3e6;--bg2:#fbe0e4;--gold:#9a5b13;--cream:#3a1f2b;--soft:#6b4350;--card:#ffffffaa;--line:#9a5b1366;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;color:var(--cream);background:linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+.wrap{width:min(900px,calc(100% - 32px));margin-inline:auto;text-align:center}
+section{padding:56px 0}
+.eyebrow{margin:0 0 16px;color:var(--soft);font:700 .74rem/1.5 system-ui,sans-serif;letter-spacing:.24em;text-transform:uppercase}
+h1,h2{margin:0;color:var(--gold);font-weight:400}
+h1{font-size:clamp(2.8rem,11vw,6rem);line-height:1.05}
+h2{font-size:clamp(1.9rem,6vw,3rem)}
+.rule{width:90px;height:2px;margin:24px auto;background:var(--gold)}
+.hero{padding-top:72px;position:relative}
+.deco{position:absolute;color:var(--line);font-size:3rem;animation:float 6s ease-in-out infinite}
+.d1{top:10%;left:6%}.d2{top:32%;right:7%;font-size:2rem;animation-delay:-2s}.d3{bottom:6%;left:12%;font-size:1.6rem;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-14px) rotate(12deg)}}
+.cd{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(8px,2.4vw,18px);margin-top:10px}
+.cd[hidden]{display:none}
+.unit{min-width:clamp(66px,19vw,112px);padding:16px 8px 12px;border:1px solid var(--line);border-radius:18px;background:var(--card);box-shadow:0 12px 36px #0003}
+.num{display:block;color:var(--gold);font-size:clamp(2.1rem,8vw,3.9rem);line-height:1;font-variant-numeric:tabular-nums}
+.lbl{display:block;margin-top:9px;color:var(--soft);font:700 .62rem/1 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.secs .num{animation:beat 1s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.07)}}
+.big{color:var(--gold);font-size:clamp(2rem,7vw,3.6rem)}
+.date{margin:18px 0 0;color:var(--soft);font:500 .95rem system-ui,sans-serif;letter-spacing:.14em}
+.photo-wrap{margin:38px auto 0;display:flex;justify-content:center}
+.photo-card{position:relative;width:min(420px,80vw);padding:14px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.02));box-shadow:0 28px 60px rgba(0,0,0,.25)}
+.photo-card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:1px solid rgba(239,199,131,.38)}
+.photo-badge{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);padding:8px 16px;border-radius:999px;background:rgba(33,20,38,.78);border:1px solid var(--line);color:var(--gold);font:700 .7rem/1.2 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;backdrop-filter:blur(6px)}
+.gallery{padding-top:24px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:30px}
+.gallery-item{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:0 14px 36px #0003;transition:transform .25s ease,box-shadow .25s ease}
+.gallery-item:hover{transform:translateY(-5px);box-shadow:0 20px 44px #0004}
+.gallery-item img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.gallery-item figcaption{padding:12px 8px;color:var(--soft);font:500 .84rem/1.4 system-ui,sans-serif}
+@media(max-width:640px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+/* gift */
+.gift{position:relative;width:150px;height:150px;margin:30px auto 10px;background:none;border:0;cursor:pointer;color:inherit;animation:wob 2.4s ease-in-out infinite}
+.gift:focus-visible{outline:3px solid var(--gold);outline-offset:8px;border-radius:12px}
+.box,.lid{position:absolute;left:10px;right:10px;background:linear-gradient(180deg,#b23a63,#8a2748);border-radius:8px}
+.box{bottom:0;height:90px}
+.lid{top:26px;height:38px;left:2px;right:2px;transition:transform .6s cubic-bezier(.3,1.6,.5,1);z-index:2}
+.box::before,.lid::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:22px;margin-left:-11px;background:var(--gold)}
+.lid::after{content:"♥";position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:2.2rem;color:var(--gold)}
+.gift.open{animation:none}.gift.open .lid{transform:translateY(-60px) rotate(-14deg)}
+@keyframes wob{0%,100%{transform:rotate(0)}10%{transform:rotate(-4deg)}20%{transform:rotate(4deg)}30%{transform:rotate(0)}}
+.hint{color:var(--soft);font:.95rem system-ui,sans-serif}
+.reveal{display:none}.reveal.show{display:block;animation:rise .9s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.letter{max-width:760px;margin:26px auto 0;padding:clamp(24px,6vw,52px);text-align:left;border:1px solid var(--line);border-radius:22px;background:var(--card);box-shadow:0 22px 70px #0003}
+.letter p{margin:0 0 18px;font-size:clamp(1.08rem,2.6vw,1.35rem);line-height:1.9}
+.letter p:last-child{margin:0;color:var(--gold);font-style:italic}
+/* cake */
+.cake{position:relative;width:230px;height:200px;margin:50px auto 10px}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:14px 14px 8px 8px}
+.t1{bottom:0;width:230px;height:70px;background:#c4547a}
+.t2{bottom:70px;width:170px;height:60px;background:#e58aa8}
+.t1::before,.t2::before{content:"";position:absolute;top:0;left:0;right:0;height:18px;border-radius:14px 14px 40% 40%;background:#fff3e6}
+.candle{position:absolute;bottom:130px;width:12px;height:46px;border:0;padding:0;background:repeating-linear-gradient(135deg,#fff3e6 0 6px,#efc783 6px 12px);border-radius:3px;cursor:pointer}
+.candle:nth-child(3){left:62px}.candle:nth-child(4){left:109px}.candle:nth-child(5){left:156px}
+.candle .flame{position:absolute;top:-26px;left:50%;width:14px;height:24px;margin-left:-7px;border-radius:50% 50% 50% 50%/65% 65% 35% 35%;background:radial-gradient(circle at 50% 70%,#fff7c2,#ffb84a 60%,#ff7a2f);box-shadow:0 0 18px 6px #ffb84a88;animation:flick .5s ease-in-out infinite alternate;transition:opacity .3s,transform .3s}
+.candle:focus-visible{outline:3px solid var(--gold);outline-offset:6px}
+.candle.out .flame{opacity:0;transform:scale(.2);animation:none}
+@keyframes flick{to{transform:scale(1.08,.94) rotate(3deg)}}
+.wish{min-height:3.4rem;margin-top:6px;color:var(--gold);font-size:clamp(1.4rem,4.4vw,2.2rem)}
+.foot{padding:40px 0 60px;color:var(--soft)}
+.foot strong{display:block;margin:12px 0;color:var(--gold);font-size:clamp(2rem,7vw,3.6rem);font-weight:400}
+.foot p{font:.95rem/1.7 system-ui,sans-serif}
+.music{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:10;padding:11px 16px;border:1px solid var(--line);border-radius:999px;background:var(--bg1);color:var(--gold);font:700 .78rem system-ui,sans-serif;letter-spacing:.1em;cursor:pointer;box-shadow:0 8px 24px #0004}
+.music:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<button class="music" id="mb" aria-pressed="false">♪ Music: off</button>
+
+<header class="hero wrap">
+  <span class="deco d1">✦</span><span class="deco d2">♥</span><span class="deco d3">✦</span>
+  <p class="eyebrow">A little love, just for you</p>
+  <h1>For Sesi<br>Kholo</h1>
+  <div class="rule"></div>
+  <p class="eyebrow" id="lab">Counting down to your special day</p>
+  <div class="cd" id="cd" role="timer">
+    <div class="unit"><span class="num" id="d">00</span><span class="lbl">Days</span></div>
+    <div class="unit"><span class="num" id="h">00</span><span class="lbl">Hours</span></div>
+    <div class="unit"><span class="num" id="m">00</span><span class="lbl">Minutes</span></div>
+    <div class="unit secs"><span class="num" id="s">00</span><span class="lbl">Seconds</span></div>
+  </div>
+  <div class="big" id="party" hidden>Happy birthday, Kholo! 🎂</div>
+  <p class="date">21 NOVEMBER</p>
+
+  <div class="photo-wrap">
+    <div class="photo-card">
+      <img src="kholo-memory-9.jpg" alt="Kholo in a close-up portrait with long dark hair" />
+      <div class="photo-badge">My favorite view</div>
+    </div>
+  </div>
+</header>
+
+<section class="wrap gallery" aria-labelledby="gallery-title">
+  <p class="eyebrow">A few of your lovely moments</p>
+  <h2 id="gallery-title">Beautiful, just as you are</h2>
+  <div class="gallery-grid">
+    <figure class="gallery-item"><img src="kholo-memory-1.jpg" alt="Kholo in a blue dress and flowing skirt" loading="lazy"><figcaption>Simply lovely</figcaption></figure>
+    <figure class="gallery-item"><img src="kholo-memory-2.jpg" alt="Kholo enjoying a sunny day outdoors" loading="lazy"><figcaption>Out in the sunshine</figcaption></figure>
+    <figure class="gallery-item"><img src="kholo-memory-3.jpg" alt="Kholo wearing a patterned headscarf" loading="lazy"><figcaption>Grace in every detail</figcaption></figure>
+    <figure class="gallery-item"><img src="kholo-memory-4.jpg" alt="Kholo smiling in a black lace dress" loading="lazy"><figcaption>That beautiful smile</figcaption></figure>
+    <figure class="gallery-item"><img src="kholo-memory-5.jpg" alt="Kholo in a bright blue jacket and colorful necklace" loading="lazy"><figcaption>Bold and beautiful</figcaption></figure>
+    <figure class="gallery-item"><img src="kholo-memory-6.jpg" alt="Kholo wearing a bright patterned outfit" loading="lazy"><figcaption>Full of color</figcaption></figure>
+    <figure class="gallery-item"><img src="kholo-memory-7.jpg" alt="Kholo relaxing in a colorful dress" loading="lazy"><figcaption>One of a kind</figcaption></figure>
+    <figure class="gallery-item"><img src="kholo-memory-8.jpg" alt="Kholo in a pink striped dress beside a red car" loading="lazy"><figcaption>Made to shine</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap" id="giftsec">
+  <p class="eyebrow">There is something waiting for you</p>
+  <h2>Tap your gift</h2>
+  <button class="gift" id="gift" aria-label="Open your gift"><span class="box"></span><span class="lid"></span></button>
+  <p class="hint" id="hint">Go on, open it ♥</p>
+</section>
+
+<section class="wrap reveal" id="letter">
+  <p class="eyebrow">From the bottom of my heart</p>
+  <h2>Dear Sesi Kholo,</h2>
+  <article class="letter">
+    <p>I have been thinking about how lucky I am to have you in my life. When you showed me Joburg, you did so much more than take me to lovely places. You made me feel welcome, looked after, and at home. Those are memories I will carry with me always.</p>
+    <p>And it is not just me. You have such a generous heart for our whole family. You have helped so many of us, welcomed my sister and little brother to Jozi, and made room for us in your life. I notice it, I appreciate it, and I will never take it for granted.</p>
+    <p>Our mothers are sisters, but the love you have given me feels like the love of a sister who has been beside me my whole life. You make family feel even more like home.</p>
+    <p>Thank you for your kindness, for every outing, for every time you showed up, and for simply being you. I hope you know how deeply you are loved and appreciated. You deserve all the beautiful things your own heart gives to everyone around you.</p>
+    <p>With all my love, always. Happy birthday, Kholo.</p>
+  </article>
+</section>
+
+<section class="wrap reveal" id="cakesec">
+  <p class="eyebrow">One more thing</p>
+  <h2>Make a wish</h2>
+  <div class="cake" aria-label="Birthday cake with three candles">
+    <div class="tier t1"></div><div class="tier t2"></div>
+    <button class="candle" aria-label="Blow out candle 1"><span class="flame"></span></button>
+    <button class="candle" aria-label="Blow out candle 2"><span class="flame"></span></button>
+    <button class="candle" aria-label="Blow out candle 3"><span class="flame"></span></button>
+  </div>
+  <p class="hint" id="chint">Tap each candle to blow it out</p>
+  <p class="wish" id="wish" aria-live="polite"></p>
+</section>
+
+<footer class="foot wrap reveal" id="foot">
+  <p>To the one who makes everyone feel cared for</p>
+  <strong>We love you, Kholo.</strong>
+  <p>Happy birthday · 21 November</p>
+</footer>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const mb = $("mb");
+  const pad = n => String(n).padStart(2, "0");
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* confetti */
+  const cv = $("fx"), cx = cv.getContext("2d");
+  let bits = [], raf = 0;
+  const size = () => { cv.width = innerWidth; cv.height = innerHeight; };
+  size(); addEventListener("resize", size);
+  function burst(n = 140) {
+    if (calm) return;
+    const cols = ["#efc783", "#e58aa8", "#c4547a", "#fff3e6", "#ffb84a"];
+    for (let i = 0; i < n; i++) bits.push({
+      x: innerWidth / 2, y: innerHeight * .45,
+      vx: (Math.random() - .5) * 16, vy: -Math.random() * 14 - 4,
+      w: 6 + Math.random() * 6, h: 4 + Math.random() * 5, r: Math.random() * 6, vr: (Math.random() - .5) * .4,
+      c: cols[i % cols.length], life: 220 + Math.random() * 80
+    });
+    if (!raf) raf = requestAnimationFrame(draw);
+  }
+  function draw() {
+    cx.clearRect(0, 0, cv.width, cv.height);
+    bits = bits.filter(b => b.life-- > 0 && b.y < cv.height + 20);
+    for (const b of bits) {
+      b.vy += .28; b.vx *= .99; b.x += b.vx; b.y += b.vy; b.r += b.vr;
+      cx.save(); cx.translate(b.x, b.y); cx.rotate(b.r);
+      cx.globalAlpha = Math.min(1, b.life / 40);
+      cx.fillStyle = b.c; cx.fillRect(-b.w / 2, -b.h / 2, b.w, b.h); cx.restore();
+    }
+    raf = bits.length ? requestAnimationFrame(draw) : 0;
+  }
+
+  /* countdown to 21 November, local time */
+  function tick() {
+    const now = new Date();
+    let start = new Date(now.getFullYear(), 10, 21), end = new Date(now.getFullYear(), 10, 22);
+    if (now >= end) { start = new Date(now.getFullYear() + 1, 10, 21); }
+    const ms = start - now;
+    if (ms <= 0) {
+      $("cd").hidden = true; $("party").hidden = false;
+      $("lab").textContent = "The day we have been waiting for"; return;
+    }
+    $("cd").hidden = false; $("party").hidden = true;
+    const t = Math.floor(ms / 1000);
+    $("d").textContent = pad(Math.floor(t / 86400));
+    $("h").textContent = pad(Math.floor(t % 86400 / 3600));
+    $("m").textContent = pad(Math.floor(t % 3600 / 60));
+    $("s").textContent = pad(t % 60);
+    $("lab").textContent = t < 86400 ? "Almost time to celebrate" : "Counting down to your special day";
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* music: a soft music-box tune made right in the page */
+  let ac, master, on = false, timer = 0, bar = 0, hb = false;
+  const CH = [[261.63,329.63,392,523.25],[220,261.63,329.63,440],[174.61,220,261.63,349.23],[196,246.94,293.66,392]];
+  function audio() {
+    if (!ac) { ac = new (window.AudioContext || window.webkitAudioContext)(); master = ac.createGain(); master.gain.value = .8; master.connect(ac.destination); }
+    if (ac.state === "suspended") ac.resume();
+  }
+  function note(f, t, d, v) {
+    const o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), g2 = ac.createGain();
+    o.frequency.value = f; o2.frequency.value = f * 4; g2.gain.value = .12;
+    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(master);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .008);
+    g.gain.exponentialRampToValueAtTime(.0008, t + d);
+    o.start(t); o2.start(t); o.stop(t + d + .05); o2.stop(t + d + .05);
+  }
+  function scheduleBar() {
+    if (!on || hb) return;
+    const ch = CH[bar++ % 4], t0 = ac.currentTime + .05;
+    [0,1,2,3,2,1,2,3].forEach((k, i) => note(ch[k] * 2, t0 + i * .4, 1.6, .09));
+    note(ch[0], t0, 2.6, .12);
+    timer = setTimeout(scheduleBar, 3200);
+  }
+  function label() { mb.textContent = on ? "♪ Music: on" : "♪ Music: off"; mb.setAttribute("aria-pressed", on); }
+  function startMusic() { audio(); on = true; label(); clearTimeout(timer); scheduleBar(); }
+  mb.addEventListener("click", () => { if (on) { on = false; clearTimeout(timer); label(); } else startMusic(); });
+  function playHB() {
+    audio(); hb = true; clearTimeout(timer);
+    const M = [[392,.75],[392,.25],[440,1],[392,1],[523.25,1],[493.88,2],[392,.75],[392,.25],[440,1],[392,1],[587.33,1],[523.25,2],[392,.75],[392,.25],[783.99,1],[659.25,1],[523.25,1],[493.88,1],[440,2],[698.46,.75],[698.46,.25],[659.25,1],[523.25,1],[587.33,1],[523.25,2]];
+    let t = ac.currentTime + .2;
+    M.forEach(([f, b]) => { note(f, t, 1.4, .2); note(f / 2, t, 1.2, .08); t += b * .55; });
+    setTimeout(() => { hb = false; if (on) scheduleBar(); }, (t - ac.currentTime) * 1000 + 600);
+  }
+
+  /* gift */
+  $("gift").addEventListener("click", () => {
+    $("gift").classList.add("open");
+    $("hint").textContent = "Happy birthday, Kholo ♥";
+    burst(160);
+    startMusic();
+    ["letter", "cakesec", "foot"].forEach((id, i) => setTimeout(() => $(id).classList.add("show"), 500 + i * 250));
+    setTimeout(() => $("letter").scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "start" }), 700);
+  }, { once: true });
+
+  /* candles */
+  const candles = [...document.querySelectorAll(".candle")];
+  candles.forEach(c => c.addEventListener("click", () => {
+    c.classList.add("out");
+    if (candles.every(x => x.classList.contains("out"))) {
+      $("chint").textContent = "";
+      $("wish").textContent = "May every wish you make come true ✦";
+      burst(220);
+      playHB();
+    }
+  }));
+})();
+</script>
+</body>
+</html>
